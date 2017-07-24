@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<style>
+	        .Error{
+            border: solid 1px red;
+        }
+		
+        table{
+            margin-top:25px;
+            border: solid 1px black;
+        }
+
+        table tr th{
+            border: solid 1px black;
+        }
+        
+        table tr td{
+            border: solid 1px black;
+        }
+		
+    </style>
+    </style>
+    <script>
+		
+		function AddMyForm(){
+			if(validateMyForm())
+			{
+				var arreglo = {first:$("#firstInput").val() , second:$("#secondInput").val(),third:$("#thirdInput").val(),fourth:$("#fourthInput").val() }
+				$("tbody").append("<tr><td>"+$("#firstInput").val()+"</td> <td>"+$("#secondInput").val()+" </td> <td>"+$("#thirdInput").val()+"</td> </td> <td>"+$("#fourthInput").val()+"</td> <tr>");
+				$("input[type='text']").val("");
+			}
+			else {
+				alert("alfredo puto");
+			}
+		}
+		function showMyArray(){
+		
+			$.each($("tbody tr") , function(index, rowActual){
+				
+			 console.log("The " +index+ " object values are: first-"+ rowActual.cells[0].innerText+" second-" + rowActual.cells[1].innerText + " third-" + rowActual.cells[2].innerText+ " fourth-"+ rowActual.cells[3].innerText);
+			})
+		}
+		
+		function validateMyForm(){
+		var alfredoPuto = true;
+		$("input[type='text']").each(function(){
+			if($(this).val().trim() == ""){
+				$(this).addClass("Error");
+				alfredoPuto= false ;
+			}
+			else {$(this).removeClass();}
+		})
+		return alfredoPuto;
+		}
+							
+    </script>
+</head>
+<body>
+    <form id="myForm">
+        <label>First Input:</label>
+        <br>
+        <input type="text" id="firstInput" value="">
+        <br>
+        <span>Second Input:</span>
+        <br>
+        <input type="text" id="secondInput" value="">
+        <br>        
+        Third Input:<br>
+        <input type="text" id="thirdInput" value="">
+        <br>        
+        Fourth Input:<br>
+        <input type="text" id="fourthInput" value="">
+        <br>
+
+        <br><br>
+        <input type="button" value="Add to row" onclick="AddMyForm()">
+		
+		<table>
+			 <thead>
+				  <tr>
+					 <th>First input</th>
+					 <th>Second input</th>
+					  <th>Third input</th>
+					   <th>Fourth input</th>
+				  </tr>
+			 </thead>
+			<tbody> </tbody>
+		</table>
+		<input type="button" value="Show" onclick="showMyArray()">
+    </form>
+</body>
+</html>

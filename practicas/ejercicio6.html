@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        .divStyle{
+            width:50%;
+            float:left;
+        }
+        .Error{
+            color:red;
+            font-size:25px;
+            border-color:blue;
+        }
+        .Success{
+            color:blueviolet;
+            font-size:30px;
+            border-color:yellow;
+        }
+        .bdColor{
+            background-color:orange;
+        }
+    </style>
+    <script>
+	  function izqADerecha(){
+		$("#ul1 li").appendTo("#ul2");
+ }
+ 	  function derAIzquierda(){
+		$("#ul2 li").appendTo("#ul1");
+ }
+   		  function removeClass(){
+          $("ul li").removeClass("Error Success bdColor");
+ }
+ 		  function addClasserror(){
+		$("#ul1 li").addClass("Error");
+ }
+    		  function removeClassul1(){
+          $("#ul1").removeClass("Error");
+ }
+ 
+    </script>
+</head>
+<body>
+    <div id="content">
+        <p>BOOM a text for Demo</p>
+        <div class="divStyle">
+            <ul id="ul1">
+                <li>
+                    Boom 1
+                </li>
+                <li>
+                    Boom 2
+                </li>
+                <li>
+                    Boom 3
+                </li>
+                <li>
+                    Boom 4
+                </li>
+                <li>
+                    Boom 5
+                </li>
+            </ul>
+        </div>
+        <div class="divStyle">
+            <ul id="ul2">
+            </ul>
+        </div>
+    </div>   
+    <div style="margin-top:15px;">
+        <button type="button" onclick="izqADerecha()">De izq a der</button>
+        <button type="button" onclick="derAIzquierda()">De der a izq</button>
+    </div>
+    <div style="margin-top:15px;">
+        <button type="button" onclick="addClasserror()">Add class</button>
+        <button type="button" onclick="removeClass()">remove all</button>
+        <button type="button" onclick="removeClassul1()">Remove Class ul</button>
+    </div>
+</body>
+</html>

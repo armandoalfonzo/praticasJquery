@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title> Pagina Pro </title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script> 
+			$(document).ready(function()
+			{
+				$('#Add').click(function(){agregar();});
+			});
+			var cont = 0;
+			function agregar()
+			{				  
+				  var x = "<tr id = \"fila"+cont+"\"><td>"+$("#dato1").val()+"</td><td>"+$("#dato2").val()+"</td><td>"+$("#dato3").val()+"</td><td>"+$("#dato4").val()+"</td><td><button type=\"button\" id = \"fila"+cont+"\" onclick = eliminar(this.id)><span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\" ></span></button></td></tr>";
+				  $('#tabla2').append(x);
+			}
+			function eliminar(Id)
+			{
+				$("#"+Id).remove();
+			}
+		</script>
+		
+	</head>
+	
+	<body>
+	
+		<div class="panel panel-default">
+			<div class="panel-heading">DataTable Advanced Table |
+				<button type="button"data-toggle="modal" data-target="#myModal">
+					<span class="glyphicon glyphicon-plus" aria-hidden="true" ></span>
+				</button>
+			</div>
+			
+			<div class="panel-body">
+				<div class="form-group">
+				<label for="sel1">Select list:</label>
+					<select id="sel1">
+						<option>5</option>
+						<option>10</option>
+						<option>15</option>
+						<option>20</option>
+					</select>
+				</div>
+			</div>
+ 
+			<!-- Table -->
+			<table class="table" border = "1px" id "tabla">
+				 <thead>
+					  <tr>
+						 <th>First input</th>
+						 <th>Second input</th>
+						  <th>Third input</th>
+						   <th>Fourth input</th>
+						   <th>Buttons</th>
+					  </tr>
+				 </thead>
+				<tbody id ="tabla2" > </tbody>
+			</table>
+						
+		</div>
+	
+	<!-- Modal -->
+		<div id="myModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+				
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Add new Row to table</h4>
+					</div>
+					
+					<div class="modal-body">
+					  
+						<label for="usr">First input:</label><br>
+					   <input type = "text" class="form-control" id = "dato1"> </input><br>
+						<label for="asd">Second input:</label><br>
+					   <input type = "text" class="form-control" id = "dato2"> </input><br>
+						<label for="eds">Third input:</label><br>
+					   <input type = "text" class="form-control" id = "dato3"> </input><br>
+						<label for="wqe">Fourth input:</label><br>
+					   <input type = "text" class="form-control" id = "dato4"> </input><br>
+					   
+					  <div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-default" id = "Add"  class="close" data-dismiss="modal">Add Row</button>						
+					  </div>
+					  
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<style>
+    </style>
+    <script>
+	
+		$(document).ready(function()
+		{
+			$("label").on("click", function(){			
+				console.log('click in the first input');				
+			})
+			
+			$("#firstInput").on("dblclick" , function(){			
+				console.log('double click in the first input');	
+			})
+			
+			$("span").hover(function(){			
+				console.log('hover in the first input');	
+			})
+			
+			$("#secondInput").on("mousemove", function(){			
+				console.log('mousemove Property');	
+			})
+			 
+			$("input[type='submit']").click("change", function(){			
+				alert('stephan <3');	
+			})
+		})
+							
+    </script>
+</head>
+<body>
+    <form id="myForm">
+        <label>First Input:</label>
+        <br>
+        <input type="text" id="firstInput" value="">
+        <br>
+        <span>Second Input:</span>
+        <br>
+        <input type="text" id="secondInput" value="">
+        <br>        
+        Third Input:<br>
+        <input type="text" id="thirdInput" value="">
+        <br>
+        <br><br>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<style>
+    </style>
+    <script>
+		$(document).ready(function()
+		{
+			$myData = [];
+		})
+		
+		function AddMyForm(){
+			if(validateMyForm())
+			{
+				var obj = {first:$("#firstInput").val() , second:$("#secondInput").val(),third:$("#thirdInput").val(),fourth:$("#fourthInput").val() }
+				$myData.push(obj);
+				$("input[type='text']").val("");
+			}
+			else {
+				alert ("campo vacio :c")
+			}
+		}
+		function showMyArrey(){
+			$.each($myData , function(index){
+			 console.log("The " +index+ " object values are: first-"+ $myData[index].first+" second-" + $myData[index].second + " third-" +$myData[index].third+ " fourth-"+$myData[index].fourth);
+			})
+		}
+		
+		function validateMyForm(){
+		var alfredoPuto = true;
+		$("input[type='text']").each(function(){
+			if($(this).val().trim() == ""){
+				$(this).addClass("Error");
+				alfredoPuto= false ;
+			}
+			else {$(this).removeClass();}
+		})
+		return alfredoPuto;
+		}
+							
+    </script>
+</head>
+<body>
+    <form id="myForm">
+        <label>First Input:</label>
+        <br>
+        <input type="text" id="firstInput" value="">
+        <br>
+        <span>Second Input:</span>
+        <br>
+        <input type="text" id="secondInput" value="">
+        <br>        
+        Third Input:<br>
+        <input type="text" id="thirdInput" value="">
+        <br>        
+        Fourth Input:<br>
+        <input type="text" id="fourthInput" value="">
+        <br>
+
+        <br><br>
+        <input type="button" value="Add" onclick="AddMyForm()">
+        <input type="button" value="Show" onclick="showMyArrey()">
+    </form>
+</body>
+</html>

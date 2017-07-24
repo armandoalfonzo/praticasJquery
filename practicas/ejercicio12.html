@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<style>
+
+        .Error{
+            border: solid 1px red;
+        }
+		
+    </style>
+    <script>
+	
+		function validateMyForm(){
+			$("input[type='text']").each(function(){
+				if($(this).val().trim() == ""){
+					$(this).addClass("Error");
+				}
+				else {$(this).removeClass();}
+			})
+		}
+		
+		function validateOnlyNumber(){
+			$("input[type='text']").each(function(){
+				if(!$.isNumeric($(this).val()))
+				{
+					$(this).addClass("Error");
+				}
+				else {$(this).removeClass();}
+			})
+		}
+							
+    </script>
+</head>
+<body>
+    <form id="myForm">
+        <label>First Input:</label>
+        <br>
+        <input type="text" id="firstInput" value="">
+        <br>
+        <span>Second Input:</span>
+        <br>
+        <input type="text" id="secondInput" value="">
+        <br>        
+        Third Input:<br>
+        <input type="text" id="thirdInput" value="">
+        <br>        
+        Fourth Input:<br>
+        <input type="text" id="fourthInput" value="">
+        <br>
+        <br><br>
+        <input type="button" value="Validate" onclick="validateMyForm()">
+        <input type="button" value="Validate Only Number" onclick="validateOnlyNumber()">
+    </form>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+ function changeText(){
+$("p").text("text");
+ }
+  function changeHtml(){
+$("p").html("text <em>text</em> test");
+ }
+  function appendLi(){
+$("ul").append("<li>blih</li>");
+ }
+   function prependLi(){
+$("ul").prepend("<li>bloh</li>");
+ }
+    function appendContent(){
+$("p").appendTo("ul");
+ }
+      function insertAfter(){
+$("p").insertAfter("ul");
+ }
+ 
+     function cloneMyP(){
+$("p").clone().insertAfter("ul");
+ }
+</script>
+</head>
+<body>
+    <div id="content">
+        <p>blah blah blah blah blah blah blah</p>
+        <p>blah blah blah blah blah blah blah</p>
+        <p>blah blah blah blah blah blah blah</p>
+        <p>blah blah blah blah blah blah blah</p>
+    </div>
+    <p>Bloh</p>
+    <div>
+        <ul>
+            <li>blah</li>
+            <li>bleh</li>
+        </ul>
+    </div>
+    <div style="margin-top:15px;">
+        <button type="button" onclick="changeText()">Set Text</button>
+        <button type="button" onclick="changeHtml()">Set Html</button>
+    </div>
+    <div style="margin-top:15px;">
+        <button type="button" onclick="appendLi()">Append in UL</button>
+        <button type="button" onclick="prependLi()">Prepend in UL</button>
+        <button type="button" onclick="appendContent()">Prepend Content in UL</button>
+    </div>
+    <div style="margin-top:15px;">
+        <button type="button" onclick="insertAfter()">insert After UL</button>
+    </div>
+    <div style="margin-top:15px;">
+        <button type="button" onclick="cloneMyP()">Clone P and Append</button>
+    </div>
+</body>
+</html>

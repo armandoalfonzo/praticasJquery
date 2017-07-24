@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title> Final Boss </title>
+<!-- Bootstrap Core CSS -->
+    <link href="./bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    <link href="./bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <!-- DataTables CSS -->
+    <link href="./bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
+    <!-- DataTables Responsive CSS -->
+    <link href="./bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="./bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<script src="./bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- DataTables JavaScript -->
+    <script src="./bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="./bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+	
+	<style>
+	
+		.Error{
+			border: solid 1px red;
+		}
+	
+    </style>
+	
+	<script> 
+
+		$(document).ready(function()
+		{
+		
+				$.ajax({
+				type:"GET" ,
+				url:"https://api.myjson.com/bins/uq1pj ",
+				data:"" ,
+				dataType: "json",
+				contentType: 'application/json; charset=utf-8',
+				success: function (data) {
+						
+					$.each( data, function( index, item ) {
+					
+						$("#item").append( 
+							"<div class = 'col-md-3' >"+
+								"<h4> Title: "+ item.title + "</h4> <br>"+
+								"<p> itemTitle: "+ item.itemTitle+ "</p> <br>"+
+								"<p> description: "+ item.description+ "</p> <br>"+
+								"<p> imgName: "+ item.imgName+ "</p> <br>"+
+								"<p> date: "+ item.date+ "</p> <br>"							
+						);
+					});
+					
+				},
+
+				error: function () {
+					alert("stephan te falle :c");
+				}				
+				
+			});
+		})
+		
+	</script>
+		
+	</head>
+	
+	<body>
+		
+		<div id = "item" class="col-md-12">
+
+		</div>
+
+
+	</body>
+</html>
